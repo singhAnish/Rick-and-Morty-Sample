@@ -1,0 +1,205 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+  <data class="CharacterDetailBinding"/>
+
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+      android:layout_height="match_parent"
+      style="@style/view_match_parent"
+      >
+
+    <ImageView
+        android:id="@+id/character_image"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="@dimen/standard_24"
+        app:layout_constraintBottom_toTopOf="@+id/status_label"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/standard_24"
+        android:background="@color/transparentBlack"
+        android:orientation="vertical"
+        android:padding="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/status_label"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        >
+
+      <TextView
+          android:id="@+id/name"
+          android:textSize="20sp"
+          tools:text="Beth Smith"
+          android:textColor="@color/white"
+          style="@style/view_wrap_parent"
+          />
+
+      <TextView
+          android:id="@+id/time"
+          android:layout_marginTop="@dimen/standard_16"
+          android:textSize="16sp"
+          tools:text="time"
+          android:textColor="@color/white"
+          style="@style/view_wrap_parent"
+          />
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/last_location_label"
+        android:layout_width="0dp"
+        android:layout_marginBottom="24dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="Last Location"
+        style="@style/text_label"
+        />
+
+
+    <TextView
+        android:id="@+id/last_location"
+        android:layout_width="0dp"
+        android:layout_marginBottom="24dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="Alive"
+        style="@style/text_value"
+        />
+
+    <TextView
+        android:id="@+id/origin_label"
+        android:layout_width="0dp"
+        android:layout_marginBottom="24dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/last_location_view"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="Origin"
+        style="@style/text_label"
+        />
+
+
+    <TextView
+        android:id="@+id/origin"
+        android:layout_width="0dp"
+        android:layout_marginBottom="24dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/last_location_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="Alive"
+        style="@style/text_value"
+        />
+
+    <TextView
+        android:id="@+id/gender_label"
+        android:layout_width="0dp"
+        android:layout_marginBottom="24dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/origin_view"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="Gender"
+        style="@style/text_label"
+        />
+
+    <TextView
+        android:id="@+id/gender"
+        android:layout_width="0dp"
+        android:layout_marginBottom="24dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/origin_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="Alive"
+        style="@style/text_value"
+        />
+
+
+    <TextView
+        android:id="@+id/species_label"
+        android:layout_width="0dp"
+        android:layout_marginBottom="24dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/gender_view"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="Species"
+        style="@style/text_label"
+        />
+
+    <TextView
+        android:id="@+id/species"
+        android:layout_width="0dp"
+        android:layout_marginBottom="24dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/gender_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="Alive"
+        style="@style/text_value"
+        />
+
+    <TextView
+        android:id="@+id/status_label"
+        android:layout_width="0dp"
+        android:layout_marginBottom="24dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/species_view"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="Status"
+        style="@style/text_label"
+        />
+
+
+    <TextView
+        android:id="@+id/status"
+        android:layout_width="0dp"
+        android:layout_marginBottom="24dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/species_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="Alive"
+        style="@style/text_value"
+        />
+
+    <View
+        android:id="@+id/last_location_view"
+        app:layout_constraintBottom_toTopOf="@+id/last_location_label"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        style="@style/view_divider"
+        />
+
+    <View
+        android:id="@+id/origin_view"
+        app:layout_constraintBottom_toTopOf="@+id/origin_label"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        style="@style/view_divider"
+        />
+
+    <View
+        android:id="@+id/gender_view"
+        app:layout_constraintBottom_toTopOf="@+id/gender_label"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        style="@style/view_divider"
+        />
+
+
+    <View
+        android:id="@+id/species_view"
+        app:layout_constraintBottom_toTopOf="@+id/species_label"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        style="@style/view_divider"
+        />
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

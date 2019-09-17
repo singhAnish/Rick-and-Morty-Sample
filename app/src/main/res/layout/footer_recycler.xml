@@ -1,0 +1,29 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:gravity="center"
+      android:orientation="horizontal"
+      android:padding="@dimen/standard_16"
+      >
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="@dimen/standard_48"
+        android:layout_height="@dimen/standard_48"
+        android:theme="@style/greenProgressBar"
+        style="@style/Base.Widget.AppCompat.ProgressBar"
+        />
+
+    <TextView
+        android:id="@+id/error_msg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/standard_16"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_16"
+        />
+  </LinearLayout>
+
+  <data class="NetworkItemBinding" />
+</layout>
