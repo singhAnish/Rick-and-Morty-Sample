@@ -8,7 +8,7 @@
   <string name="retry">Retry</string>
   <string name="noInternet">No network connection</string>
 
-  <string name="no_functionality">Functionality not implemented.</string>
+  <string name="character_dead">Character is Dead now</string>
   <string name="release_date">Release Date : </string>
 
 

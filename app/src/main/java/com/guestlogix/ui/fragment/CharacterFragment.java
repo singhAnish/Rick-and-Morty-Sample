@@ -1,15 +1,17 @@
 package com.guestlogix.ui.fragment;
 
 import android.os.Bundle;
+import androidx.annotation.NonNull;
 import androidx.lifecycle.ViewModelProviders;
-import androidx.paging.PagedList;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import com.google.android.material.snackbar.Snackbar;
 import com.guestlogix.MyApp;
 import com.guestlogix.R;
 import com.guestlogix.adapters.character.CharacterAdapter;
 import com.guestlogix.databinding.CharacterBinding;
 import com.guestlogix.datasource.character.CharacterDataSource;
-import com.guestlogix.model.character.CharacterSchema;
 import com.guestlogix.repository.character.CharacterRepository;
 import com.guestlogix.utils.BaseFragment;
 import com.guestlogix.utils.Constants;
@@ -47,6 +49,20 @@ public class CharacterFragment extends BaseFragment implements CharacterDataSour
       binding.recyclerView.setAdapter(adapter);
       viewModel.getCharacterLiveData().observe(this, adapter :: submitList);
       viewModel.getNetworkState().observe(this, adapter :: setNetworkState);
+
+
+      new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.RIGHT) {
+        @Override public boolean onMove(@NonNull RecyclerView recyclerView,
+            @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
+          return false;
+        }
+
+        @Override
+        public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+          Snackbar.make(binding.recyclerView, R.string.character_dead, Snackbar.LENGTH_SHORT).show();
+          adapter.notifyItemRemoved(viewHolder.getAdapterPosition());
+        }
+      }).attachToRecyclerView(binding.recyclerView);
     }
   }
 
